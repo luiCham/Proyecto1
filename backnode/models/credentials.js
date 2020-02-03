@@ -1,22 +1,18 @@
 const { Schema, model } = require('mongoose');
 
-const sensors1Schema = new Schema({
-    temp: {
+const credentialsSchema = new Schema({
+    email: {
         type: Number,
         trim: true
     },
-    hum: {
+    password: {
         type: Number,
-        trim: true
-    },
-    email:{
-        type: String,
         trim: true
     },
     name:{
         type: String,
         trim: true
-    }
+    }    
 });
 
-module.exports = model('sensors', sensors1Schema);
+module.exports = model('credentials', credentialsSchema);
