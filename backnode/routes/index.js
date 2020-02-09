@@ -16,6 +16,9 @@ const basic = auth.basic({
   file: path.join(__dirname, '../users.htpasswd'),
 });
 
+router.get('/prueba', (req,res) => {
+  res.send('nice');
+});
 
 router.post('/registration', 
 [
@@ -57,6 +60,8 @@ router.post('/login',
   ],
   (req, res) => {
     const errors = validationResult(req);
+    console.log(req.body);
+    console.log(req.data);
     if (errors.isEmpty()) {
       credentials.findOne(req.body, function(err, isMatch) {
         if(isMatch==null) {
