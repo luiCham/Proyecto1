@@ -9,6 +9,9 @@ Autenticación
 Visualizar los datos almacenados de un arduino en específico
 
 ¿CUALES SON LOS REQUISITOS NO FUNCIONALES DE LA APP?
+Seguridad
+Confiabilidad
+
 
 ¿QUÉ TECNOLOGÍA DE DESARROLLO UTILIZÓ?
 Se utilizaron frameworks modernos que aplican el patrón de diseño MVC para desarrollar aplicaciones web y se utilizó persistencia básica de datos en una base de datos noSQL.
