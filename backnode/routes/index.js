@@ -40,8 +40,8 @@ router.post('/registration',
         .then(()=>{
           res.send('Registered');
         })
-        .catch(()=>{
-          res.send('registration error');
+        .catch((e)=>{
+          res.send(e);
         });
     }else{
       res.send('Baad credentials');
@@ -61,7 +61,6 @@ router.post('/login',
   (req, res) => {
     const errors = validationResult(req);
     console.log(req.body);
-    console.log(req.data);
     if (errors.isEmpty()) {
       credentials.findOne(req.body, function(err, isMatch) {
         if(isMatch==null) {
@@ -76,7 +75,7 @@ router.post('/login',
   }
 );
 
-router.post('/recieving',
+router.post('/receiving',
 [
   body('temp').isLength({min : 1}),
   body('hum').isLength({min : 1}),
@@ -88,7 +87,7 @@ router.post('/recieving',
     var saving = new sensors(req.body);
   saving.save()
     .then(()=>{
-      res.send("Saved");
+      res.send("Saved\n"+saving);
     })
     .catch(()=>{
       res.send("Error");
